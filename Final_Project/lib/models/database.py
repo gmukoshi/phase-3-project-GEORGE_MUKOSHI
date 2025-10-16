@@ -1,7 +1,9 @@
 import sqlite3
 import os
 
-#database connection and setup of database path
+#enabling absolute path for the database file
+#This allows the database to be accessed from anywhere in the project
+#and ensures that the database file is created in the correct location.
 DB_PATH = os.path.join(
     os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
     "db",
@@ -9,6 +11,8 @@ DB_PATH = os.path.join(
 )
 os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
 
+# Establishing a connection to the SQLite database
+#and creating a cursor object for executing SQL commands.
 CONN = sqlite3.connect(DB_PATH)
 CURSOR = CONN.cursor()
 
