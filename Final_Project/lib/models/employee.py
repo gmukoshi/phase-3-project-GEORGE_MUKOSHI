@@ -7,42 +7,45 @@ class Employee:
         self.department = department
 
     def save(self):
-        """Insert or update employee record."""
-        if not self.name or not self.department:
-            raise ValueError("Name and Department are required.")
-        if self.id:
-            CURSOR.execute(
-                "UPDATE employees SET name=?, department=? WHERE id=?",
-                (self.name, self.department, self.id)
-            )
-        else:
-            CURSOR.execute(
-                "INSERT INTO employees (name, department) VALUES (?, ?)",
-                (self.name, self.department)
-            )
-            self.id = CURSOR.lastrowid
+        """Insert a new employee record."""
+        CURSOR.execute("""
+            INSERT INTO employees (name, department)
+            VALUES (?, ?)
+        """, (self.name, self.department))
         CONN.commit()
-        return self
+        self.id = CURSOR.lastrowid
+        print(f"✅ Employee '{self.name}' added successfully (ID: {self.id})")
+
+    def update(self):
+        """Update employee details."""
+        CURSOR.execute("""
+            UPDATE employees
+            SET name=?, department=?
+            WHERE id=?
+        """, (self.name, self.department, self.id))
+        CONN.commit()
+        print(f"📝 Employee ID {self.id} updated successfully.")
 
     def delete(self):
+        """Delete employee record."""
         CURSOR.execute("DELETE FROM employees WHERE id=?", (self.id,))
         CONN.commit()
-
-    @classmethod
-    def find_by_id(cls, id):
-        CURSOR.execute("SELECT * FROM employees WHERE id=?", (id,))
-        row = CURSOR.fetchone()
-        return cls(row[1], row[2], row[0]) if row else None
+        print(f"🗑️ Employee ID {self.id} deleted successfully.")
 
     @classmethod
     def all(cls):
-        CURSOR.execute("SELECT * FROM employees")
-        rows = CURSOR.fetchall()
-        return [cls(row[1], row[2], row[0]) for row in rows]
+        """Return all employees."""
+        rows = CURSOR.execute("SELECT * FROM employees").fetchall()
+        return [cls(row[1], row[2], id=row[0]) for row in rows]
+
+    @classmethod
+    def find_by_id(cls, employee_id):
+        """Find employee by ID."""
+        row = CURSOR.execute("SELECT * FROM employees WHERE id=?", (employee_id,)).fetchone()
+        return cls(row[1], row[2], id=row[0]) if row else None
 
     def get_assets(self):
+        """Return all assets assigned to this employee."""
         from lib.models.assets import Asset
-        return Asset.find_by_employee(self.id)
-
-    def __repr__(self):
-        return f"<Employee {self.id}: {self.name} ({self.department})>"
+        rows = CURSOR.execute("SELECT * FROM assets WHERE employee_id=?", (self.id,)).fetchall()
+        return [Asset(*row[1:], id=row[0]) for row in rows]
