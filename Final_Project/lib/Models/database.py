@@ -1,17 +1,19 @@
 import sqlite3
 import os
 
-# Database file path
+# Bulding an absolute path to the database file to ensure it is correctly located
+# regardless of the current working directory.
 DB_PATH = os.path.join(
     os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
     "db",
     "database.db"
 )
 
-# Ensure the db/ folder exists
+# Ensure the db/ folder exists before closing the database connection.
 os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
 
-# Shared connection and cursor
+# Establishing a connection to the SQLite database
+# and creating a cursor for executing SQL commands.
 CONN = sqlite3.connect(DB_PATH)
 CURSOR = CONN.cursor()
 
@@ -41,3 +43,4 @@ def create_tables():
     """)
 
     CONN.commit()
+    
