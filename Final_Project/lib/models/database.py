@@ -1,7 +1,7 @@
 import sqlite3
 import os
 
-# --- Database setup ---
+#database connection and setup of database path
 DB_PATH = os.path.join(
     os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
     "db",
