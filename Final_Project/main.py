@@ -1,7 +1,8 @@
 from lib.models.database import create_tables
 from lib.cli import main_menu
 
-def main()
+def main():
+    """Main function to initialize the Asset Management System."""
     print("🚀 Welcome to the Asset Management System...")
     create_tables()  # Ensure tables are created before starting the CLI
     main_menu()  # Start the main CLI menu
