@@ -1,36 +1,100 @@
-# 
-
-## Project Description
+# Asset Inventory management App
 
 ## Introduction
 
-Smart Goal Planner App is a digital tool designed to help users set, track, and achieve their personal, financial, professional, or lifestyle goals using the SMART criteria framework.
+The Asset Inventory Management App is a **menu-driven Command Line Interface (CLI)** application built in **Python**to help IT companies efficiently **track and manage company assets** (e.g., laptops, safety boots, overalls, toolkits) and the **employees** assigned to them.
 
-From this App we are able to achieve the CRUD operations
+The system ensures accountability by linking assets to employees and providing real-time summaries of asset allocations.This project aims to demonstrate Python Object-Oriented Programming (OOP), SQLite3 database integration,ORM-style data handling and CRUD operations.
 
-- Create goals.
-- Read -That is knowing your targeted goal and timelines to achieve it.
-- Update -You can be depositing towards your goal and knowing the balance you have for you to attain your goal
-- Delete -One can ommit a goal that he or she is not interested in.
+## 📁 Project Structure
 
-## Installation
-1. Clone the repo  
+phase-3-project-GEORGE_MUKOSHI/
+Final_Project                # created a virtual enviroment
+│
+├── lib/                      
+│   ├── cli.py                
+│   └── models/               
+│       ├── assets.py         
+│       └── database.py       
+│       └── employee.py       
+│
+├── db/                       
+│   └── database.db           
+│
+├── main.py                   
+├── README.md                  
+└── .gitignore                
 
-- git clone https://github.com/gmukoshi/smart-goal-planner
+## Project Description
+
+This project implements a menu-driven CLI for managing company assets and employees using a local SQLite3 database.
+
+The app follows a modular structure:
+
+- lib/ **Main project code**
+- lib/database.py **handles database setup and connections.**
+- lib/models/ **contains ORM-style Python classes (Employee, Asset) that manage CRUD operations.**
+- lib/cli.py **provides an interactive user interface for asset and employee management.**
+- main.py **acts as the entry point, ensuring the database is initialized before the program starts.**
+- README.md **Project overview and setup guide**
+- gitignore **Files/folders Git should ignore**
+- database.db **SQLite database file**
+
+## 🚀 Setup & Installation
+
+## ⚙️ Prerequisits
+
+- **Python 3.8+**
+- **SQLite3** (comes preinstalled with Python)
+- **pipenv** (optional, for managing dependencies)
+
+1. **Clone this repository:**
+   
+   git clone https://github.com/yourusername/phase-3-project-GEORGE_MUKOSHI.git
 
 2. Navigate to the project folder  
-- cd smart-goal-planner/
-3. Run the project ( use code . to access VS code)
+-  cd phase-3-project-GEORGE_MUKOSHI/
+
+3. Run the project
+- python3 main.py
 
 ## Usage
-- one can add his or her goal and specify on the categories on the form the add.
-- one can update the goal through a deposit and check the deposit button to reduce balance.
-- one can monitor on the overview on reduced balance,time left to compete the payment and when is the goal due.
 
+- ## 🧰 Usage
+
+Follow these steps to use the **Asset Inventory Management CLI Application**:
+
+1. **Activate the virtual environment**
+   ```bash
+   source venv/bin/activate     # (Mac/Linux)
+
+2. python3 main.py
+3.Below is an overview display 
+🚀 Welcome to the Asset Management System...
+
+ Main Menu
+1. Manage Employees
+2. Manage Assets
+3. Generate Reports
+4. Exit
+Enter choice:
 
 ## Features
-- Implementing React
-- Creating of Components.
-- Creating of Components,implementing props and event handlers.
-- Use of import,export features to link up components to main App
-- Consuming Local dbjson API via HTTP response methods
+
+- Full CRUD functionality (Create, Read, Update, Delete)
+- One-to-many relationships between employees and assets
+- Asset summary report generation
+- Data validation and clean error handling
+
+## Technologies Used
+
+- python3
+- SQlite3
+- os module
+- venv
+
+## License
+- This project is licensed under the MIT License.
+
+## Author
+- George Imbiakha Mukoshi
