@@ -1,6 +1,6 @@
 from lib.models.employee import Employee
 from lib.models.assets import Asset
-from lib.database import CURSOR
+from lib.models.database import CURSOR
 
 def main_menu():
     while True:
