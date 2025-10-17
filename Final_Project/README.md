@@ -10,7 +10,9 @@ The system ensures accountability by linking assets to employees and providing r
 
 phase-3-project-GEORGE_MUKOSHI/
 ├── 
-Final_Project/                # created a virtual enviroment
+
+Final_Project/    # created a virtual enviroment
+              
 │
 ├── lib/                      
 │   ├── cli.py                
@@ -19,9 +21,11 @@ Final_Project/                # created a virtual enviroment
 │       └── database.py       
 │       └── employee.py       
 │
+
 ├── db/                       
 │   └── database.db           
 │
+
 ├── main.py                   
 ├── README.md                  
 └── .gitignore                
