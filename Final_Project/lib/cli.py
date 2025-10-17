@@ -2,9 +2,10 @@ from lib.models.employee import Employee
 from lib.models.assets import Asset
 from lib.models.database import CURSOR
 
+# CLI for managing employees and assets in the system
 def main_menu():
     while True:
-        print("\n🏢 Main Menu")
+        print("\n Main Menu")
         print("1. Manage Employees")
         print("2. Manage Assets")
         print("3. Generate Reports")
@@ -27,7 +28,7 @@ def main_menu():
 # ---------- EMPLOYEE MANAGEMENT ----------
 def employee_menu():
     while True:
-        print("\n👩‍💼 Employee Management")
+        print("\n Employee Management")
         print("1. Add Employee")
         print("2. View All Employees")
         print("3. Delete Employee")
