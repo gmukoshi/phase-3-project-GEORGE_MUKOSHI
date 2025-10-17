@@ -2,14 +2,15 @@
 
 ## Introduction
 
-The Asset Inventory Management App is a **menu-driven Command Line Interface (CLI)** application built in **Python**to help IT companies efficiently **track and manage company assets** (e.g., laptops, safety boots, overalls, toolkits) and the **employees** assigned to them.
+The Asset Inventory Management App is a **menu-driven Command Line Interface (CLI)** application built in **Python** to help IT companies efficiently **track and manage company assets** (e.g., laptops, safety boots, overalls, toolkits) and the **employees** assigned to them.
 
 The system ensures accountability by linking assets to employees and providing real-time summaries of asset allocations.This project aims to demonstrate Python Object-Oriented Programming (OOP), SQLite3 database integration,ORM-style data handling and CRUD operations.
 
 ## 📁 Project Structure
 
 phase-3-project-GEORGE_MUKOSHI/
-Final_Project                # created a virtual enviroment
+├── 
+Final_Project/                # created a virtual enviroment
 │
 ├── lib/                      
 │   ├── cli.py                
@@ -69,7 +70,9 @@ Follow these steps to use the **Asset Inventory Management CLI Application**:
    source venv/bin/activate     # (Mac/Linux)
 
 2. python3 main.py
+
 3.Below is an overview display 
+
 🚀 Welcome to the Asset Management System...
 
  Main Menu
