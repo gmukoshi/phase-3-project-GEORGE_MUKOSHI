@@ -14,11 +14,11 @@ phase-3-project-GEORGE_MUKOSHI/
 Final_Project/    # created a virtual enviroment         
 │
 ├── lib/                      
-│   ├── cli.py                
-│   └── models/               
-│       ├── assets.py         
-│       └── database.py       
-│       └── employee.py       
+│    ├── cli.py                
+│    └── models/               
+│        ├── assets.py         
+│        └── database.py       
+│        └── employee.py       
 │
 
 ├── db/                       
